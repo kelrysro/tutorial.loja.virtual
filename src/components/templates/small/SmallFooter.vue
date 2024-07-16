@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { onBeforeRouteUpdate } from 'vue-router';
+
+const showMenu = ref(false);
+
+onBeforeRouteUpdate(() => {
+  showMenu.value = false;
+});
+</script>
 <template>
    <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
     <RouterLink to="/">
@@ -30,13 +39,50 @@
     </div>
   </div>
 </template>
-<style setup>
-import { ref } from 'vue';
-import { onBeforeRouteUpdate } from 'vue-router';
+<style scoped>
+#footerMenu {
+    position: fixed;
+    bottom: 15%;
+    right: 0;
 
-const showMenu = ref(false);
+    width: 20%;
+    border-top: #EEEEEE 1px solid;
+    background-color: white;
 
-onBeforeRouteUpdate(() => {
-  showMenu.value = false;
-});
+    display: block;
+    padding: 1rem;
+}
+
+#footerMenu a {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #282828;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+
+.icons {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons a,
+.icons .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #282828;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
 </style>
