@@ -4,9 +4,9 @@ services:
     image: eduardosilvasc/fakestore-backend-drf:latest
     environment:
       - MODE=DEVELOPMENT #  possible values are: DEVELOPMENT, PRODUCTION, MIGRATE
-      - SECRET_KEY=SOME_SECRET_KEY_HERE
+      - SECRET_KEY=!_ac6_q7@g^%*+83z#cm29xh@$plb3jz)frisevfc%j9zjb8(u
       - DEBUG=True #  possible values are: True, False
       - PASSAGE_APP_ID=1GosxSlR5hCoO6OdsRK5lJgz
-      - PASSAGE_API_KEY=CRwwET849s.9b4nzLLT6fMsJzp1Pa5ESfIXEdsfxOIQuHaA0sGZ3twrLSjntIKNpYI9tfNQR2m4
+      - PASSAGE_API_KEY=V9OmqBBKhv.l2sfmI89KK73fIWq4ELJSVoN31xoQ0uQN1hUcqedBsPWggsEcQU3MYGdDEcei7s8
     ports:
       - 8000:8000
